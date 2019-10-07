@@ -21,16 +21,16 @@ class Form extends Component {
         <h1>Welcome To Star Wars Trivia</h1>
         <form>
           <label>Name</label>
-          <input type="text" placeholder="Name" name="name" value={this.state.name} />
+          <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={event => this.handleChange(event)} />
           <label>Quote</label>
-          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote}></textarea>
+          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote} onChange={event => this.handleChange(event)}></textarea>
           <label>Ranking</label>
-          <select>
-            <option name="ranking" value="padawan">Padawan</option>
-            <option name="ranking" value="jedi knight">Jedi Knight</option>
-            <option name="ranking" value="jedi master">Jedi Master</option>
+          <select name="ranking" onChange={event => this.handleChange(event)}>
+            <option value="padawan">Padawan</option>
+            <option value="jedi knight">Jedi Knight</option>
+            <option value="jedi master">Jedi Master</option>
           </select>
-          <button disabled type="submit">May The Force Be With You</button>
+          <button disabled type="submit" >May The Force Be With You</button>
         </form>
       </>
     )
