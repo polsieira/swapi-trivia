@@ -11,20 +11,24 @@ class Form extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value })
+  };
+
   render() {
     return (
       <>
         <h1>Welcome To Star Wars Trivia</h1>
         <form>
           <label>Name</label>
-          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Name" name="name" value={this.state.name} />
           <label>Quote</label>
-          <textarea type="text" placeholder="Name"></textarea>
+          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote}></textarea>
           <label>Ranking</label>
           <select>
-            <option value="padawan">Padawan</option>
-            <option value="jedi knight">Jedi Knight</option>
-            <option value="jedi master">Jedi Master</option>
+            <option name="ranking" value="padawan">Padawan</option>
+            <option name="ranking" value="jedi knight">Jedi Knight</option>
+            <option name="ranking" value="jedi master">Jedi Master</option>
           </select>
           <button disabled type="submit">May The Force Be With You</button>
         </form>
