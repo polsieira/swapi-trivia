@@ -7,17 +7,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies:[],
+      movies: [],
       currentContainer: <Form />
     }
   }
 
   componentDidMount() {
     getMovies('https://swapi.co/api/films/')
-      .then(movies => this.setState({movies}))
+      .then(movies => this.setState({ movies }))
       .then(() => console.log(this.state.movies))
-      .then(() => console.log(getCharacters(this.state.movies[3].characters)))
-  
+      .then(() => getCharacters(this.state.movies[3].characters))
+      .then(results => console.log(results))
+      .catch(error => console.log("Error:", error))
+
 
   }
 

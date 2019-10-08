@@ -19,10 +19,11 @@ const getCharacter = (url) => {
     .then(response => response.json())
     .then(character => {
       const { name } = character;
-      const homeworld = getHomeworld(character.homeworld)
-      const species = getAllSpecies(character.species)
-      const films = getRelatedFilms(character.films)
-      return Promise.all([name, homeworld, species, films])
+      const homeworld = getHomeworld(character.homeworld);
+      const population = getPopulation(character.homeworld);
+      const species = getAllSpecies(character.species);
+      const films = getRelatedFilms(character.films);
+      return Promise.all([name, homeworld, population, species, films])
     })
     .catch(error => console.log('error', error))
 }
@@ -30,7 +31,13 @@ const getCharacter = (url) => {
 const getHomeworld = (url) => {
   return fetch(url)
     .then(response => response.json())
-    .then(homeworld => ({homeworld: homeworld.name, population: homeworld.population}))
+    .then(homeworld => homeworld.name)
+}
+
+const getPopulation = (url) => {
+  return fetch(url)
+    .then(response => response.json())
+    .then(homeworld => homeworld.population)
 }
 
 const getAllSpecies = (allSpecies) => {
@@ -45,7 +52,7 @@ const getAllSpecies = (allSpecies) => {
 const getSpecies = (url) => {
   return fetch(url)
     .then(response => response.json())
-    .then(species => ({species: species.name}))
+    .then(species => species.name)
 }
 
 const getRelatedFilms = (films) => {
@@ -60,5 +67,5 @@ const getRelatedFilms = (films) => {
 const getFilmTitle = (url) => {
   return fetch(url)
     .then(response => response.json())
-    .then(film => ({film: film.title}))
+    .then(film => film.title)
 }
