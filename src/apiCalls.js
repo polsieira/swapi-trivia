@@ -19,10 +19,10 @@ const getCharacter = (url) => {
     .then(response => response.json())
     .then(character => {
       const { name } = character;
-      getHomeworld(character.homeworld)
-        .then(response => console.log(response))
-      getAllSpecies(character.species)
-      getRelatedFilms(character.films)
+      const homeworld = getHomeworld(character.homeworld)
+      const species = getAllSpecies(character.species)
+      const films = getRelatedFilms(character.films)
+      return Promise.all([name, homeworld, species, films])
     })
     .catch(error => console.log('error', error))
 }
@@ -60,5 +60,5 @@ const getRelatedFilms = (films) => {
 const getFilmTitle = (url) => {
   return fetch(url)
     .then(response => response.json())
-    .then(film => console.log(({film: film.title})))
+    .then(film => ({film: film.title}))
 }
