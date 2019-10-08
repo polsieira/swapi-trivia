@@ -17,6 +17,32 @@ export const getCharacters = (characters) => {
 const getCharacter = (url) => {
   return fetch(url)
     .then(response => response.json())
-    .then(data => data)
+    .then(character => {
+      const { name } = character;
+      getHomeworld(character.homeworld)
+        .then(response => console.log(response))
+      getAllSpecies(character.species)
+    })
     .catch(error => console.log('error', error))
+}
+
+const getHomeworld = (url) => {
+  return fetch(url)
+    .then(response => response.json())
+    .then(homeworld => ({homeworld: homeworld.name, population: homeworld.population}))
+}
+
+const getAllSpecies = (allSpecies) => {
+  const speciesData = allSpecies.map(specie => {
+    return getSpecies(specie)
+      .then(specie => specie)
+  })
+
+  return Promise.all(speciesData);
+}
+
+const getSpecies = (url) => {
+  return fetch(url)
+    .then(response => response.json())
+    .then(species => ({species: species.name}))
 }

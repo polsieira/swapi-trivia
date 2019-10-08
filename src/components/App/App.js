@@ -17,6 +17,7 @@ class App extends Component {
       .then(movies => this.setState({movies}))
       .then(() => console.log(this.state.movies))
       .then(() => console.log(getCharacters(this.state.movies[3].characters)))
+  
 
   }
 
