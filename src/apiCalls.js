@@ -8,7 +8,13 @@ export const getMovies = (url) => {
 export const getCharacters = (characters) => {
   const characterData = characters.map(character => {
     return getCharacter(character)
-      .then(character => character)
+      .then(character => ({
+        name: character[0],
+        homeworld: character[1],
+        population: character[2],
+        species: character[3],
+        films: character[4],
+      }))
   })
 
   return Promise.all(characterData);
