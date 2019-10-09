@@ -8,7 +8,7 @@ const MovieCard = (props) => {
       <h3>{props.title}</h3>
       <p>{props.episode}</p>
       <p>{props.year}</p>
-      <button>View Characters</button>
+      <button id={props.episode}>View Characters</button>
     </div>
   )
 }
