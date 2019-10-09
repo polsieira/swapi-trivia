@@ -11,15 +11,17 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      characters: []
     }
   }
 
   componentDidMount() {
     getMovies('https://swapi.co/api/films/')
       .then(movies => this.setState({ movies }))
-      .then(() => console.log(this.state.movies))
+      .then(() => console.log('2nd .then() in App', this.state.movies))
       .then(() => getCharacters(this.state.movies[3].characters))
-      .then(results => console.log(results))
+      .then(results => this.setState({characters: results}))
+      // .then(results => console.log('results --->', results))
       .catch(error => console.log("Error:", error))
 
 
@@ -34,7 +36,11 @@ class App extends Component {
             exact path='/movies' 
             render={() => <MovieContainer movies={this.state.movies}/> }/>
         }
-        <Route exact path='/movies/3' component={ CharacterContainer }/>
+        {this.state.characters &&
+          <Route 
+            exact path='/movies/3' 
+            render={() => <CharacterContainer characters={this.state.characters}/>}/>
+        }
       </Router>
 
     )
