@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import './App.scss';
@@ -28,7 +28,11 @@ class App extends Component {
     return (
       <Router>
         <Route exact path='/' component={ Form } />
-        <Route path='/movies' component={ MovieContainer } />
+        {this.state.movies &&        
+          <Route 
+            path='/movies' 
+            render={() => <MovieContainer movies={this.state.movies}/> }/>
+        }
       </Router>
 
     )

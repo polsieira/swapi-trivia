@@ -1,12 +1,16 @@
 import React from 'react';
 
-const MovieCard = () => {
-  <div className="movie-card">
-    <h3>Title</h3>
-    <p>Episode</p>
-    <p>Year</p>
-    <button>View Characters</button>
-  </div>
+const MovieCard = (props) => {
+  console.log('IN CARD', props)
+
+  return(
+    <div className="movie-card">
+      <h3>{props.title}</h3>
+      <p>{props.episode}</p>
+      <p>{props.year}</p>
+      <button>View Characters</button>
+    </div>
+  )
 }
 
 export default MovieCard;
