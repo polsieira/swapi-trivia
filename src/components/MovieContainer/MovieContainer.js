@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MovieCard from './MovieCard/MovieCard';
-import UserInfo from './UserInfo/UserInfo';
+// import MovieCard from './MovieCard/MovieCard';
+// import UserInfo from './UserInfo/UserInfo';
 
 class MovieContainer extends Component{
   constructor() {
@@ -15,9 +15,9 @@ class MovieContainer extends Component{
       <main>
         <header>
           <h1>Star Wars Episodes</h1>
-          <UserInfo />
+          {/* <UserInfo /> */}
         </header>
-        <MovieCard />
+        {/* <MovieCard /> */}
       </main>
     )
   }

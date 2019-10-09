@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import './Form.scss';
 
 class Form extends Component {
@@ -30,7 +31,9 @@ class Form extends Component {
             <option value="jedi knight">Jedi Knight</option>
             <option value="jedi master">Jedi Master</option>
           </select>
-          <button disabled type="submit" >May The Force Be With You</button>
+          <Link to='/movies'>
+            <p>May The Force Be with You</p>
+          </Link>
         </form>
       </>
     )

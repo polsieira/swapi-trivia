@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Form from '../Form/Form';
+import MovieContainer from '../MovieContainer/MovieContainer';
 import './App.scss';
 
 class App extends Component {
@@ -8,7 +10,6 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      currentContainer: <Form />
     }
   }
 
@@ -25,9 +26,11 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        {this.state.currentContainer}
-      </>
+      <Router>
+        <Route exact path='/' component={ Form } />
+        <Route path='/movies' component={ MovieContainer } />
+      </Router>
+
     )
   }
 
