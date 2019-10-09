@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 // import UserInfo from './UserInfo/UserInfo';
 
-class MovieContainer extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      characters: []
-    }
-  }
+const MovieContainer = (props) => {
 
-  movieInfo() {
-    return this.props.movies.map(movie => {
+  const movieInfo = props.movies.map(movie => {
       return <MovieCard
         id = { movie.episode_id }
         title = { movie.title }
@@ -19,19 +12,18 @@ class MovieContainer extends Component{
         year = { movie.release_date }
         />
     })
-}
 
-  render() {
+
     return (
       <main>
         <header>
           <h1>Star Wars Episodes</h1>
           {/* <UserInfo /> */}
         </header>
-        { this.movieInfo() }
+        { movieInfo }
       </main>
     )
-  }
+  
 }
 
 
