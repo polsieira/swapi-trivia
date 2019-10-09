@@ -10,23 +10,25 @@ class MovieContainer extends Component{
     }
   }
 
-  movieInfo = this.props.movies.map(movie => {
-    return <MovieCard
-      title = { movie.title }
-      episode = { movie.episode }
-      year = { movie.year }
-      />
-  })
+  movieInfo() {
+    return this.props.movies.map(movie => {
+      return <MovieCard
+        title = { movie.title }
+        episode = { movie.episode_id }
+        year = { movie.release_date }
+        />
+    })
+}
 
   render() {
-    console.log('props in container', this.props.movies.map(movie => movie.title))
+    console.log('props in container', this.movieInfo())
     return (
       <main>
         <header>
           <h1>Star Wars Episodes</h1>
           {/* <UserInfo /> */}
         </header>
-        { this.movieInfo }
+        { this.movieInfo() }
       </main>
     )
   }
