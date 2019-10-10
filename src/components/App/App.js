@@ -26,10 +26,7 @@ class App extends Component {
   }
 
   selectMovie = (id) => {
-    console.log('before setState', this.state.movieSelected)
     this.setState({ movieSelected: id})
-    console.log('after setState', this.state.movieSelected)
-
   }
 
   render() {
