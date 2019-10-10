@@ -22,17 +22,14 @@ class App extends Component {
       .then(() => console.log('2nd .then() in App', this.state.movies))
       .then(() => getCharacters(this.state.movies[3].characters))
       .then(results => this.setState({characters: results}))
-      // .then(results => console.log('results --->', results))
       .catch(error => console.log("Error:", error))
   }
 
-  selectMovie(id) {
-    console.log('in select movie', id)
-    // invoke on click
-    // setState of movie selected to whatever the id is
-    // this changes whatever is being passed through...
-      //path
-      //character container prop
+  selectMovie = (id) => {
+    console.log('before setState', this.state.movieSelected)
+    this.setState({ movieSelected: id})
+    console.log('after setState', this.state.movieSelected)
+
   }
 
   render() {
