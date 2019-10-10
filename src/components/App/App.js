@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Route } from 'react-router-dom'
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';

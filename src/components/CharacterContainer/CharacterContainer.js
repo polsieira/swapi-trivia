@@ -6,10 +6,10 @@ const CharacterContainer = (props) => {
   const characterInfo = props.characters.map(character => {
     return <CharacterCard 
       name = { character.name }
-      films = { character. films }
+      films = { character.films }
       homeworld = { character.homeworld }
       population = { character.population }
-      species = { character. species }
+      species = { character.species }
     />
   })
 
