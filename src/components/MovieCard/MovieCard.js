@@ -9,7 +9,7 @@ const MovieCard = (props) => {
       <p>{props.episode}</p>
       <p>{props.year}</p>
       <Link to='/movies/3'>
-        <p id={3}>View Characters</p>
+        <button value={props.episode} onClick={event => props.selectMovie(event.target.value)}>View Characters</button>
       </Link>
     </div>
   )

@@ -12,7 +12,7 @@ const CharacterContainer = (props) => {
       species = { character. species }
     />
   })
-  // console.log(props.characters)
+
   return (
       <h1>{ characterInfo }</h1>
     )

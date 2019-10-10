@@ -10,6 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      movieSelected: null,
       movies: [],
       characters: []
     }
@@ -23,8 +24,15 @@ class App extends Component {
       .then(results => this.setState({characters: results}))
       // .then(results => console.log('results --->', results))
       .catch(error => console.log("Error:", error))
+  }
 
-
+  selectMovie(id) {
+    console.log('in select movie', id)
+    // invoke on click
+    // setState of movie selected to whatever the id is
+    // this changes whatever is being passed through...
+      //path
+      //character container prop
   }
 
   render() {
@@ -34,7 +42,7 @@ class App extends Component {
         {this.state.movies &&        
           <Route 
             exact path='/movies' 
-            render={() => <MovieContainer movies={this.state.movies}/> }/>
+            render={() => <MovieContainer movies={this.state.movies}  selectMovie={this.selectMovie}/> }/>
         }
         {this.state.characters &&
           <Route 
