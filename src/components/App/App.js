@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
@@ -21,23 +21,27 @@ class App extends Component {
       .then(movies => this.setState({ movies }))
       .then(() => console.log('2nd .then() in App', this.state.movies))
       .then(() => getCharacters(this.state.movies[3].characters))
-      .then(results => this.setState({ characters: results }))
+      .then(results => this.setState({characters: results}))
       .catch(error => console.log("Error:", error))
+  }
+
+  selectMovie = (id) => {
+    this.setState({ movieSelected: id})
   }
 
   render() {
     return (
       <Router>
-        <Route exact path='/' component={Form} />
-        {this.state.movies &&
-          <Route
-            exact path='/movies'
-            render={() => <MovieContainer movies={this.state.movies} selectMovie={this.selectMovie} />} />
+        <Route exact path='/' component={ Form } />
+        {this.state.movies &&        
+          <Route 
+            exact path='/movies' 
+            render={() => <MovieContainer movies={this.state.movies}  selectMovie={this.selectMovie}/> }/>
         }
         {this.state.characters &&
-          <Route
-            exact path='/movies/3'
-            render={() => <CharacterContainer characters={this.state.characters} />} />
+          <Route 
+            exact path='/movies/3' 
+            render={() => <CharacterContainer characters={this.state.characters}/>}/>
         }
       </Router>
 
