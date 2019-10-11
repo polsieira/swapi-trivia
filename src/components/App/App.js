@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { BrowserRouter as Route } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
@@ -25,13 +25,9 @@ class App extends Component {
       .catch(error => console.log("Error:", error))
   }
 
-  selectMovie = (id) => {
-    this.setState({ movieSelected: id })
-  }
-
   render() {
     return (
-      <div className="App">
+      <Router>
         <Route exact path='/' component={Form} />
         {this.state.movies &&
           <Route
@@ -43,7 +39,8 @@ class App extends Component {
             exact path='/movies/3'
             render={() => <CharacterContainer characters={this.state.characters} />} />
         }
-      </div>
+      </Router>
+
     )
   }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
-// import UserInfo from './UserInfo/UserInfo';
 
 const MovieContainer = (props) => {
   const movieInfo = props.movies.map(movie => {
