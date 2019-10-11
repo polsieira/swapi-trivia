@@ -5,7 +5,6 @@ import MovieCard from '../MovieCard/MovieCard';
 const MovieContainer = (props) => {
   const movieInfo = props.movies.map(movie => {
       return <MovieCard
-        selectMovie = { props.selectMovie }
         id = { movie.episode_id }
         title = { movie.title }
         episode = { movie.episode_id }
