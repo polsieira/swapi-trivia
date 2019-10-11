@@ -5,8 +5,10 @@ import MovieContainer from './MovieContainer';
 
 describe('MovieContainer', () => {
   it('should match the snapshot with all data passed correctly', () => {
+    const mockSelectMovie = jest.fn()
     const wrapper = shallow(<MovieContainer 
-      movies
+      movies='[]'
+      selectMove = {mockSelectMovie}
       />)
 
     expect(wrapper).toMatchSnapshot();
