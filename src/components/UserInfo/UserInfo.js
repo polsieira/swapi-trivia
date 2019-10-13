@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserInfo = () => {
-  return(
+const UserInfo = ({ name, quote, ranking }) => {
+  return (
     <>
-      <h2>Name: {}</h2>
-      <p>Quote: {}</p>
-      <p>Ranking: {}</p>
+      <h2>Name: {name}</h2>
+      <p>Quote: {quote}</p>
+      <p>Ranking: {ranking}</p>
       <button>Sign Out</button>
     </>
   )
