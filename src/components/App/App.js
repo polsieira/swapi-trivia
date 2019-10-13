@@ -11,8 +11,8 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movieSelected: {},
-      characters: [],
+      selectedMovie: {},
+      selectedCharacters: [],
       user: {
         name: '',
         quote: '',
@@ -37,7 +37,14 @@ class App extends Component {
   }
 
   selectMovie = (id) => {
-    this.setState({ movieSelected: id })
+    this.setState({ selectedMovie: this.state.movies[id - 1] });
+    this.setCurrentCharacters(this.state.movies[id - 1].characters);
+  }
+
+  setCurrentCharacters = (characters) => {
+    getCharacters(characters)
+      .then(response => this.setState({ selectedCharacters: response }))
+      .then(() => this.forceUpdate())
   }
 
   render() {
@@ -51,12 +58,11 @@ class App extends Component {
             render={() => <MovieContainer movies={this.state.movies} selectMovie={this.selectMovie} />} />
         }
         {
-          this.state.characters &&
+          this.state.selectedCharacters &&
           <Route
             exact path='/movies/:id'
-            render={({ match }) => {
-              const { id } = match.params;
-              return <CharacterContainer characters={this.state.characters} />
+            render={() => {
+              return <CharacterContainer characters={this.state.selectedCharacters} selectMovie={this.selectMovie} />
             }} />
         }
       </main>

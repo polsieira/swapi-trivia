@@ -3,13 +3,14 @@ import CharacterCard from '../CharacterCard/CharacterCard';
 
 const CharacterContainer = ({ characters }) => {
 
-  const characterInfo = characters.map(character => {
+  const characterInfo = characters.map((character, index) => {
     return <CharacterCard
       name={character.name}
       films={character.films}
       homeworld={character.homeworld}
       population={character.population}
       species={character.species}
+      key={index}
     />
   })
 
