@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserInfo = ({ name, quote, ranking }) => {
   return (
@@ -6,7 +7,9 @@ const UserInfo = ({ name, quote, ranking }) => {
       <h2>Name: {name}</h2>
       <p>Quote: {quote}</p>
       <p>Ranking: {ranking}</p>
-      <button type='submit' className='button--sign-out'>Sign Out</button>
+      <Link to='/'>
+        <button type='submit' className='button--sign-out'>Sign Out</button>
+      </Link>
     </>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import UserInfo from '../UserInfo/UserInfo';
 
-const CharacterContainer = ({ characters, user }) => {
+const CharacterContainer = ({ characters, user, scrollingText }) => {
 
   const characterInfo = characters.map((character, index) => {
     return <CharacterCard
