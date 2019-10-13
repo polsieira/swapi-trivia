@@ -1,21 +1,21 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-const CharacterContainer = (props) => {
+const CharacterContainer = ({ characters }) => {
 
-  const characterInfo = props.characters.map(character => {
-    return <CharacterCard 
-      name = { character.name }
-      films = { character.films }
-      homeworld = { character.homeworld }
-      population = { character.population }
-      species = { character.species }
+  const characterInfo = characters.map(character => {
+    return <CharacterCard
+      name={character.name}
+      films={character.films}
+      homeworld={character.homeworld}
+      population={character.population}
+      species={character.species}
     />
   })
 
   return (
-      <h1>{ characterInfo }</h1>
-    )
+    <h1>{characterInfo}</h1>
+  )
 }
 
 

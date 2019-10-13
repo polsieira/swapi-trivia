@@ -10,8 +10,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieSelected: null,
       movies: [],
+      movieSelected: {},
       characters: [],
       user: {
         name: '',
@@ -53,8 +53,11 @@ class App extends Component {
         {
           this.state.characters &&
           <Route
-            exact path='/movies/3'
-            render={() => <CharacterContainer characters={this.state.characters} />} />
+            exact path='/movies/:id'
+            render={({ match }) => {
+              const { id } = match.params;
+              return <CharacterContainer characters={this.state.characters} />
+            }} />
         }
       </main>
     )

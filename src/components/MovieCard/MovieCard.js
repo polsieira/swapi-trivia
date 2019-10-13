@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieCard = (props) => {
+const MovieCard = ({ title, episode, year }) => {
 
-  return(
+  return (
     <div className="movie-card">
-      <h3>{props.title}</h3>
-      <p>{props.episode}</p>
-      <p>{props.year}</p>
+      <h3>{title}</h3>
+      <p>{episode}</p>
+      <p>{year}</p>
       <Link to='/movies/3'>
-        <button value={props.episode} >View Characters</button>
+        <button value={episode} >View Characters</button>
       </Link>
     </div>
   )
