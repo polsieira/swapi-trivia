@@ -2,6 +2,7 @@ export const getMovies = (url) => {
   return fetch(url)
     .then(response => response.json())
     .then(movies => movies.results)
+    .then(movies => sortMovies(movies))
     .catch(error => console.log('error', error))
 }
 
@@ -74,4 +75,8 @@ const getFilmTitle = (url) => {
   return fetch(url)
     .then(response => response.json())
     .then(film => film.title)
+}
+
+const sortMovies = (movies) => {
+  return movies.sort((movieA, movieB) => parseInt(movieA.episode_id) - parseInt(movieB.episode_id))
 }
