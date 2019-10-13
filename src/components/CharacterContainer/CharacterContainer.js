@@ -1,7 +1,8 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import UserInfo from '../UserInfo/UserInfo';
 
-const CharacterContainer = ({ characters }) => {
+const CharacterContainer = ({ characters, user }) => {
 
   const characterInfo = characters.map((character, index) => {
     return <CharacterCard
@@ -15,7 +16,17 @@ const CharacterContainer = ({ characters }) => {
   })
 
   return (
-    <h1>{characterInfo}</h1>
+    <>
+      <header>
+        <h1>Star Wars Characters</h1>
+        <UserInfo
+          name={user.name}
+          quote={user.quote}
+          ranking={user.ranking}
+        />
+      </header>
+      {characterInfo}
+    </>
   )
 }
 

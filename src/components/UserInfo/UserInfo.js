@@ -6,7 +6,7 @@ const UserInfo = ({ name, quote, ranking }) => {
       <h2>Name: {name}</h2>
       <p>Quote: {quote}</p>
       <p>Ranking: {ranking}</p>
-      <button>Sign Out</button>
+      <button type='submit' className='button--sign-out'>Sign Out</button>
     </>
   )
 }

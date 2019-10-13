@@ -24,10 +24,6 @@ class App extends Component {
   componentDidMount() {
     getMovies('https://swapi.co/api/films/')
       .then(movies => this.setState({ movies }))
-    // .then(() => console.log('2nd .then() in App', this.state.movies))
-    // .then(() => getCharacters(this.state.movies[3].characters))
-    // .then(results => this.setState({ characters: results }))
-    // .catch(error => console.log("Error:", error))
   }
 
   submitUserInfo = (userInfo) => {
@@ -55,14 +51,14 @@ class App extends Component {
           this.state.movies &&
           <Route
             exact path='/movies'
-            render={() => <MovieContainer movies={this.state.movies} selectMovie={this.selectMovie} />} />
+            render={() => <MovieContainer movies={this.state.movies} user={this.state.user} selectMovie={this.selectMovie} />} />
         }
         {
           this.state.selectedCharacters &&
           <Route
             exact path='/movies/:id'
             render={() => {
-              return <CharacterContainer characters={this.state.selectedCharacters} selectMovie={this.selectMovie} />
+              return <CharacterContainer characters={this.state.selectedCharacters} user={this.state.user} />
             }} />
         }
       </main>
