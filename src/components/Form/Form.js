@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './Form.scss';
 
 class Form extends Component {
@@ -8,7 +8,8 @@ class Form extends Component {
     this.state = {
       name: '',
       quote: '',
-      ranking: ''
+      ranking: '',
+      isSignedIn: false
     }
   }
 
@@ -16,7 +17,26 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value })
   };
 
+  signIn = (event) => {
+    event.preventDefault();
+    this.setState({ isSignedIn: true });
+    this.props.submitUserInfo(this.state);
+    this.resetState();
+  }
+
+  resetState = () => {
+    this.setState({
+      name: "",
+      quote: "",
+      ranking: ""
+
+    })
+  }
+
   render() {
+    if (this.state.isSignedIn) {
+      return <Redirect to='/movies' />
+    }
     return (
       <>
         <h1>Welcome To Star Wars Trivia</h1>
@@ -31,9 +51,7 @@ class Form extends Component {
             <option value="jedi knight">Jedi Knight</option>
             <option value="jedi master">Jedi Master</option>
           </select>
-          <Link to='/movies'>
-            <p>May The Force Be with You</p>
-          </Link>
+          <button type="submit" className="button--sign-in" onClick={this.signIn}>May The Force Be with You</button>
         </form>
       </>
     )

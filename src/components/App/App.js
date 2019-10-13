@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
@@ -12,17 +12,28 @@ class App extends Component {
     this.state = {
       movieSelected: null,
       movies: [],
-      characters: []
+      characters: [],
+      user: {
+        name: '',
+        quote: '',
+        ranking: ''
+      }
     }
   }
 
   componentDidMount() {
     getMovies('https://swapi.co/api/films/')
       .then(movies => this.setState({ movies }))
-      .then(() => console.log('2nd .then() in App', this.state.movies))
-      .then(() => getCharacters(this.state.movies[3].characters))
-      .then(results => this.setState({ characters: results }))
-      .catch(error => console.log("Error:", error))
+    // .then(() => console.log('2nd .then() in App', this.state.movies))
+    // .then(() => getCharacters(this.state.movies[3].characters))
+    // .then(results => this.setState({ characters: results }))
+    // .catch(error => console.log("Error:", error))
+  }
+
+  submitUserInfo = (userInfo) => {
+    this.setState({
+      user: { ...userInfo }
+    })
   }
 
   selectMovie = (id) => {
@@ -32,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        <Route exact path='/' component={Form} />
+        <Route exact path='/' render={() => <Form submitUserInfo={this.submitUserInfo} />} />
         {
           this.state.movies &&
           <Route
