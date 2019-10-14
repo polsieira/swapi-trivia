@@ -1,15 +1,32 @@
 $star-wars-yellow: #FFE81F;
 
+.movie-cards {
+  width: 190px;
+  height: 500px;
+}
+
 .movie-card-1 {
-  background-color: blue;
+ background-image: url('../../images/phantom-menace.jpg');
+ background-repeat: no-repeat;
+ background-size: auto;
+ background-position: center;
+ border: red solid 5px;
 }
 
 .movie-card-2 {
-  background-color: purple;
+  background-image: url('../../images/clones.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  border: green solid 5px;
 }
 
 .movie-card-3 {
-  background-color: orange;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: left;
+  background-image: url('../../images/revenge-of-the-sith.jpg');
+  border: orange solid 5px;
 }
 
 .movie-card-4 {

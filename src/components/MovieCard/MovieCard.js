@@ -5,7 +5,7 @@ import './MovieCard.scss';
 const MovieCard = ({ id, title, episode, year, selectMovie }) => {
 
   return (
-    <div className={`movie-card-${id}`}>
+    <div className={`movie-card-${id} movie-cards`}>
       <h3>{title}</h3>
       <p>Episode {episode}</p>
       <p>Release Date: {year}</p>
