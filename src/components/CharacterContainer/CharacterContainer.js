@@ -1,21 +1,33 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import UserInfo from '../UserInfo/UserInfo';
 
-const CharacterContainer = (props) => {
+const CharacterContainer = ({ characters, user, scrollingText }) => {
 
-  const characterInfo = props.characters.map(character => {
-    return <CharacterCard 
-      name = { character.name }
-      films = { character.films }
-      homeworld = { character.homeworld }
-      population = { character.population }
-      species = { character.species }
+  const characterInfo = characters.map((character, index) => {
+    return <CharacterCard
+      name={character.name}
+      films={character.films}
+      homeworld={character.homeworld}
+      population={character.population}
+      species={character.species}
+      key={index}
     />
   })
 
   return (
-      <h1>{ characterInfo }</h1>
-    )
+    <>
+      <header>
+        <h1>Star Wars Characters</h1>
+        <UserInfo
+          name={user.name}
+          quote={user.quote}
+          ranking={user.ranking}
+        />
+      </header>
+      {characterInfo}
+    </>
+  )
 }
 
 

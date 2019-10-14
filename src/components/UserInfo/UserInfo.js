@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const UserInfo = () => {
-  return(
+const UserInfo = ({ name, quote, ranking }) => {
+  return (
     <>
-      <h2>Name: {}</h2>
-      <p>Quote: {}</p>
-      <p>Ranking: {}</p>
-      <button>Sign Out</button>
+      <h2>Name: {name}</h2>
+      <p>Quote: {quote}</p>
+      <p>Ranking: {ranking}</p>
+      <Link to='/'>
+        <button type='submit' className='button--sign-out'>Sign Out</button>
+      </Link>
     </>
   )
 }

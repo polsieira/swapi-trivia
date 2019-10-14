@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies, getCharacters } from '../../apiCalls';
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import Form from '../Form/Form';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
@@ -10,41 +10,58 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieSelected: null,
       movies: [],
-      characters: []
+      selectedMovie: {},
+      selectedCharacters: [],
+      user: {
+        name: '',
+        quote: '',
+        ranking: ''
+      }
     }
   }
 
   componentDidMount() {
     getMovies('https://swapi.co/api/films/')
       .then(movies => this.setState({ movies }))
-      .then(() => console.log('2nd .then() in App', this.state.movies))
-      .then(() => getCharacters(this.state.movies[3].characters))
-      .then(results => this.setState({characters: results}))
-      .catch(error => console.log("Error:", error))
+  }
+
+  submitUserInfo = (userInfo) => {
+    this.setState({
+      user: { ...userInfo }
+    })
   }
 
   selectMovie = (id) => {
-    this.setState({ movieSelected: id})
+    this.setState({ selectedMovie: this.state.movies[id - 1] });
+    this.setCurrentCharacters(this.state.movies[id - 1].characters);
+  }
+
+  setCurrentCharacters = (characters) => {
+    getCharacters(characters)
+      .then(response => this.setState({ selectedCharacters: response }))
+      .then(() => this.forceUpdate())
   }
 
   render() {
     return (
-      <Router>
-        <Route exact path='/' component={ Form } />
-        {this.state.movies &&        
-          <Route 
-            exact path='/movies' 
-            render={() => <MovieContainer movies={this.state.movies}  selectMovie={this.selectMovie}/> }/>
+      <main className='App'>
+        <Route exact path='/' render={() => <Form submitUserInfo={this.submitUserInfo} />} />
+        {
+          this.state.movies &&
+          <Route
+            exact path='/movies'
+            render={() => <MovieContainer movies={this.state.movies} user={this.state.user} selectMovie={this.selectMovie} />} />
         }
-        {this.state.characters &&
-          <Route 
-            exact path='/movies/3' 
-            render={() => <CharacterContainer characters={this.state.characters}/>}/>
+        {
+          this.state.selectedCharacters &&
+          <Route
+            exact path='/movies/:id'
+            render={() => {
+              return <CharacterContainer characters={this.state.selectedCharacters} user={this.state.user} scrollingText={this.selectMovie.opening_crawl} />
+            }} />
         }
-      </Router>
-
+      </main>
     )
   }
 
