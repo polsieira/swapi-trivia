@@ -22,15 +22,19 @@ $star-wars-yellow: #FFE81F;
 }
 
 .movie-card-3 {
+  background-image: url('../../images/revenge-of-the-sith.jpg');
+  background-position: left;
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: left;
-  background-image: url('../../images/revenge-of-the-sith.jpg');
   border: orange solid 5px;
 }
 
 .movie-card-4 {
-  background-color: pink;
+  background-image: url('../../images/new-hope.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: white solid 5px;
 }
 
 .movie-card-5 {
