@@ -1,21 +1,21 @@
-// .home {
-//   background-image: url(https://media.giphy.com/media/SmwRZcT9jOypG/giphy.gif);
-//   background-repeat: no-repeat;
-//   background-size: auto;
-// }
-
 * {
-  margin: 0;
-}
-
-.home {
+    margin: 0;
+  }
+  
+  .home {
+  background-image: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  z-index: 1;
   margin-top: 60px;
 }
 
 .h1-welcome-banner {
+  color: yellow;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  z-index: 1;
 }
 
 form {
