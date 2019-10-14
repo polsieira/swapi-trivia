@@ -21,7 +21,6 @@ class Form extends Component {
   signIn = (event) => {
     event.preventDefault();
     const errors = this.validateForm();
-    this.setState({ errors });
     if (!errors.name && !errors.quote && !errors.ranking) {
       this.setState({ isSignedIn: true });
       this.props.submitUserInfo(this.state);
@@ -30,18 +29,20 @@ class Form extends Component {
   }
 
   validateForm() {
-    return {
+    const errors = {
       name: !this.state.name || this.state.name.length === 0 ? 'Name is required' : false,
       quote: !this.state.quote || this.state.quote.length === 0 ? 'Quote is required' : false,
-      ranking: !this.state.ranking || this.state.ranking.length === 0 ? 'Ranking is required' : false
     }
+    this.setState({ errors });
+    return errors;
   }
 
   resetState = () => {
     this.setState({
       name: "",
       quote: "",
-      ranking: ""
+      ranking: "",
+      errors: {}
     })
   }
 
@@ -54,15 +55,15 @@ class Form extends Component {
         <h1>Welcome To Star Wars Trivia</h1>
         <form>
           <label>Name</label>
-          <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange} />
+          <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={event => this.handleChange(event)} />
           {this.state.errors && <span className='errorMessage'>{this.state.errors.name}</span>}
 
           <label>Quote</label>
-          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote} onChange={this.handleChange}></textarea>
+          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote} onChange={event => this.handleChange(event)}></textarea>
           {this.state.errors && <span className='errorMessage'>{this.state.errors.quote}</span>}
 
           <label>Ranking</label>
-          <select name="ranking" value={this.state.ranking} onChange={this.handleChange}>
+          <select name="ranking" value={this.state.ranking} onChange={event => this.handleChange(event)}>
             <option value="padawan">Padawan</option>
             <option value="jedi knight">Jedi Knight</option>
             <option value="jedi master">Jedi Master</option>

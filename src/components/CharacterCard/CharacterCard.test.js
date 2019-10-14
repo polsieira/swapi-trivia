@@ -4,15 +4,18 @@ import { shallow } from 'enzyme';
 import CharacterCard from './CharacterCard';
 
 describe('CharacterCard', () => {
-  it('should match the snapshot with all data passed correctly', () => {
-    const wrapper = shallow(<CharacterCard 
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<CharacterCard
       name="Lord Helmet"
       films="Space Balls"
       homeworld="Planet Spaceball"
-      population = "100000"
-      species = 'Human'
-      />)
+      population="100000"
+      species='Human'
+    />)
+  });
 
+  it('should match the snapshot with all data passed correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 

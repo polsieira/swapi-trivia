@@ -9,7 +9,7 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
       <p>Name: {name}</p>
       <p>Homeworld: {homeworld}</p>
       <p>Population: {population}</p>
-      <p>Species: {!species ? 'Species Unkown' : species}</p>
+      <p>Species: {!species ? 'Species Unknown' : species}</p>
       <p>Related Films: {filmsList}</p>
       <button>Make a Favorite</button>
     </div>
