@@ -52,17 +52,15 @@ class Form extends Component {
     }
     return (
       <div className="home">
-        <h1>Welcome To Star Wars Trivia</h1>
+        <h1 className="h1-welcome-banner">Welcome To Star Wars Trivia</h1>
         <form>
-          <label>Name</label>
-          <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={event => this.handleChange(event)} />
+          <input type="text" placeholder="Enter Name" name="name" value={this.state.name} onChange={event => this.handleChange(event)} />
           {this.state.errors && <span className='errorMessage'>{this.state.errors.name}</span>}
 
-          <label>Quote</label>
-          <textarea type="text" placeholder="Quote" name="quote" value={this.state.quote} onChange={event => this.handleChange(event)}></textarea>
+          <textarea type="text" placeholder="Enter Favorite Quote" name="quote" value={this.state.quote} onChange={event => this.handleChange(event)}></textarea>
           {this.state.errors && <span className='errorMessage'>{this.state.errors.quote}</span>}
 
-          <label>Ranking</label>
+          <label>Select Jedi Level</label>
           <select name="ranking" value={this.state.ranking} onChange={event => this.handleChange(event)}>
             <option value="padawan">Padawan</option>
             <option value="jedi knight">Jedi Knight</option>
