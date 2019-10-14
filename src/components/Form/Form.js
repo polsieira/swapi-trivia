@@ -21,7 +21,7 @@ class Form extends Component {
   signIn = (event) => {
     event.preventDefault();
     const errors = this.validateForm();
-    if (!errors.name && !errors.quote && !errors.ranking) {
+    if (!errors.name && !errors.quote) {
       this.setState({ isSignedIn: true });
       this.props.submitUserInfo(this.state);
       this.resetState();
@@ -66,7 +66,6 @@ class Form extends Component {
             <option value="jedi knight">Jedi Knight</option>
             <option value="jedi master">Jedi Master</option>
           </select>
-          {this.state.errors && <span className='error'>{this.state.errors.rank}</span>}
           <button type="submit" className="button--sign-in" onClick={this.signIn}>May The Force Be with You</button>
         </form>
       </div>

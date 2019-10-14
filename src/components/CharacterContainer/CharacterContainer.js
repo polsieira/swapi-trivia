@@ -16,8 +16,6 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
     />
   })
 
-  console.log(scrollingText)
-
   return (
     <>
       <header>
@@ -27,11 +25,12 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
           quote={user.quote}
           ranking={user.ranking}
         />
+        <CrawlContainer
+          title={episode}
+          subTitle={title}
+          text={scrollingText} />
       </header>
-      <CrawlContainer
-        title={episode}
-        subTitle={title}
-        text={scrollingText} />
+
       {characterInfo}
     </>
   )

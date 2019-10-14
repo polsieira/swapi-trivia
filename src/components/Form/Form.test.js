@@ -161,7 +161,7 @@ describe('Form', () => {
     wrapper.instance().validateForm();
 
     //Expectation
-    expect(wrapper.state.errors).toEqual('dfsa'); q
+    expect(wrapper.state.errors).toEqual('dfsa');
   })
 
 });
