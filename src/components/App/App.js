@@ -58,7 +58,7 @@ class App extends Component {
           <Route
             exact path='/movies/:id'
             render={() => {
-              return <CharacterContainer characters={this.state.selectedCharacters} user={this.state.user} scrollingText={this.selectMovie.opening_crawl} />
+              return <CharacterContainer characters={this.state.selectedCharacters} user={this.state.user} scrollingText={this.state.selectedMovie.opening_crawl} episode={this.state.selectedMovie.episode_id} title={this.state.selectedMovie.title} />
             }} />
         }
       </main>

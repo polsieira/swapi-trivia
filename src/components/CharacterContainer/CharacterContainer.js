@@ -1,8 +1,9 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import UserInfo from '../UserInfo/UserInfo';
+import CrawlContainer from '../CrawlContainer/CrawlContainer';
 
-const CharacterContainer = ({ characters, user, scrollingText }) => {
+const CharacterContainer = ({ characters, user, scrollingText, episode, title }) => {
 
   const characterInfo = characters.map((character, index) => {
     return <CharacterCard
@@ -15,6 +16,8 @@ const CharacterContainer = ({ characters, user, scrollingText }) => {
     />
   })
 
+  console.log(scrollingText)
+
   return (
     <>
       <header>
@@ -25,6 +28,10 @@ const CharacterContainer = ({ characters, user, scrollingText }) => {
           ranking={user.ranking}
         />
       </header>
+      <CrawlContainer
+        title={episode}
+        subTitle={title}
+        text={scrollingText} />
       {characterInfo}
     </>
   )
