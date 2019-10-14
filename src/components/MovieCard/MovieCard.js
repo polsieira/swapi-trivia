@@ -8,7 +8,7 @@ const MovieCard = ({ id, title, episode, year, selectMovie }) => {
     <div className={`movie-card-${id}`}>
       <h3>{title}</h3>
       <p>Episode {episode}</p>
-      <p>{year}</p>
+      <p>Release Date: {year}</p>
       <Link to={`/movies/${id}`}>
         <button value={episode} id={id} onClick={event => selectMovie(event.target.id)}>View Characters</button>
       </Link>

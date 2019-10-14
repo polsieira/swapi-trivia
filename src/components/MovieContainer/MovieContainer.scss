@@ -10,3 +10,8 @@ $star-wars-yellow: #FFE81F;
   font-size: 85px;
   padding-top: 50px;
 }
+
+.movie-container-content {
+  display: flex;
+  justify-content: space-around;
+}

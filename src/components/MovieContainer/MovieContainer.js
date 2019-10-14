@@ -28,7 +28,9 @@ const MovieContainer = ({ movies, user, selectMovie }) => {
           ranking={user.ranking}
         />
       </header>
-      {movieInfo}
+      <div className="movie-container-content">
+        {movieInfo}
+      </div>
     </div>
 
   )
