@@ -18,7 +18,7 @@ class Form extends Component {
 
   render() {
     return (
-      <>
+      <div className="home">
         <h1>Welcome To Star Wars Trivia</h1>
         <form>
           <label>Name</label>
@@ -35,7 +35,7 @@ class Form extends Component {
             <p>May The Force Be with You</p>
           </Link>
         </form>
-      </>
+      </div>
     )
   }
 }
