@@ -17,7 +17,6 @@ const MovieContainer = ({ movies, user, selectMovie }) => {
     )
   })
 
-
   return (
     <div className="movie-container">
       <header>

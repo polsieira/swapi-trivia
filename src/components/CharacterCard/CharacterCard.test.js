@@ -19,5 +19,9 @@ describe('CharacterCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  // it('should call toggleFavorite when button is pressed', () => {
+
+  // });
+
 
 });

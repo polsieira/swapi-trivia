@@ -157,11 +157,78 @@ describe('Form', () => {
       name: '',
       quote: ''
     })
-    //Execution
-    wrapper.instance().validateForm();
 
     //Expectation
-    expect(wrapper.state.errors).toEqual('dfsa');
+    expect(wrapper.instance().validateForm()).toEqual({ "name": "Name is required", "quote": "Quote is required" });
+  });
+
+  it('should call validate form and submituser info if there are no errors', () => {
+    //Setup
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+    wrapper.instance().validateForm = jest.fn().mockReturnValue({
+      name: '',
+      quote: ''
+    });
+    wrapper.instance().resetState = jest.fn();
+    const newState = {
+      name: 'Pol',
+      quote: 'I have a dream',
+      ranking: 'Scoundrel',
+    };
+    const expectedState = {
+      name: 'Pol',
+      quote: 'I have a dream',
+      ranking: 'Scoundrel',
+      isSignedIn: true,
+      errors: {}
+    }
+    wrapper.setState(newState)
+
+    //Execution
+    wrapper.instance().signIn(mockEvent);
+
+    //Expectation
+    expect(wrapper.instance().validateForm).toHaveBeenCalled();
+    expect(wrapper.state('isSignedIn')).toEqual(true);
+    expect(mockSubmitUserInfo).toHaveBeenCalledWith(expectedState);
+    expect(wrapper.instance().resetState).toHaveBeenCalled();
   })
+
+  it('should call validate form and not submituser info if there are errors', () => {
+    //Setup
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+    wrapper.instance().validateForm = jest.fn().mockReturnValue({
+      name: 'Error',
+      quote: 'Error'
+    });
+    wrapper.instance().resetState = jest.fn();
+    wrapper.setState({
+      name: 'Pol',
+      quote: 'I have a dream',
+      ranking: 'Scoundrel'
+    })
+
+    //Execution
+    wrapper.instance().signIn(mockEvent);
+
+    //Expectation
+    expect(wrapper.instance().validateForm).toHaveBeenCalled()
+  });
+
+  it('should add error message if form state is empty', () => {
+    //Expectation
+    expect(wrapper.instance().validateForm()).toEqual({ name: 'Name is required', quote: 'Quote is required' })
+  });
+
+  it('should not add error message if form state is not empty', () => {
+    //Setup
+    wrapper.setState({ name: 'Pol', quote: 'Pants' })
+    //Expectation
+    expect(wrapper.instance().validateForm()).toEqual({ name: false, quote: false })
+  });
 
 });
