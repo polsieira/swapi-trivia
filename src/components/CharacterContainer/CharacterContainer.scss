@@ -2,7 +2,21 @@
 
 }
 
+.character-container {
+	background-image: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
+	background-repeat: repeat;
+	font-family: 'Oswald', sans-serif;
+}
+
 .loadingPage {
   background: rgb(166, 124, 82);
   height: 100vh;
+}
+
+.character-card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 9%;
+	width: 75%;
 }

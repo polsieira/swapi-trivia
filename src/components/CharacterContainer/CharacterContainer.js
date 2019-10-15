@@ -38,14 +38,15 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
           ranking={user.ranking}
         />
       </header>
-      <div className='crawl'>
+      <div className="character-card-container">
+        {characterInfo}
+      </div>
+      <div className="crawl">
         <CrawlContainer
           title={episode}
           subTitle={title}
           text={scrollingText} />
       </div>
-
-      {characterInfo}
     </div>
   )
 }

@@ -2,15 +2,30 @@ $star-wars-yellow: #FFE81F;
 
 .character-card {
   border: 1px solid $star-wars-yellow;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 7px;
+  opacity: .8;
+  padding: 5px;
   width: 200px;
+    li {
+      list-style: none;
+    }
+    p {
+      font-size: 15px;
+    }
+  z-index: 1;
 }
 
 .character-card-detail {
+  color: white;
   margin: 2px 0;
 }
 
 .character-card button {
   background: none;
-  border: $star-wars-yellow 1px solid;
-  color: $star-wars-yellow;
+  border: white 1px solid;
+  color: white;
 }
