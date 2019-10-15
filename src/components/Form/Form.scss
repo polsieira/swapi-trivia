@@ -52,7 +52,6 @@ label {
 input {
   background: none;
   color: $star-wars-yellow;
-  margin-top: 30px;
 }
 
 input::placeholder, textarea::placeholder, select::placeholder {
@@ -80,6 +79,7 @@ input::placeholder, textarea::placeholder, select::placeholder {
  select {
   background: none;
   color: $star-wars-yellow;
+  margin: 0;
   width: 73%;
  }
 
