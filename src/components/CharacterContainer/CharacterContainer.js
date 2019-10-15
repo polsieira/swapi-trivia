@@ -17,7 +17,7 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
   })
 
   return (
-    <>
+    <div className="character-container">
       <header>
         <h1>Star Wars Characters</h1>
         <UserInfo
@@ -32,7 +32,7 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
       </header>
 
       {characterInfo}
-    </>
+    </div>
   )
 }
 

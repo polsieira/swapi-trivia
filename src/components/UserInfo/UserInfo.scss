@@ -10,11 +10,10 @@ $star-wars-yellow: #FFE81F;
 }
 
 .button--sign-out {
+  background: none;
   border: $star-wars-yellow 1px solid;
+  color: $star-wars-yellow;
   font-size: 15px;
   font-weight: bold;
   height: 25px;
-  background: none;
-
-  color: $star-wars-yellow;
 }
