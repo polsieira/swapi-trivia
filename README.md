@@ -22,6 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## ScreenShots
 
-![Home Page](./src/screenshot/homepage.png)
-![Movie Page](./src/screenshot/moviepage.png)
+![Home Page](./src/screenshot/screenshot-homepage.png)
+![Movie Page](./src/screenshot/screenshot-moviepage.png)
 
