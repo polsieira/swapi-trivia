@@ -1,8 +1,31 @@
 $star-wars-yellow: #FFE81F;
 
 .movie-cards {
-  width: 190px;
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 550px;
+  margin-bottom: 30px;
+  width: 170px;
+}
+
+.movie-card-p {
+  margin: 0;
+}
+
+.movie-card-info {
+  background-color: black;
+  color: $star-wars-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 25%;
+  opacity: .8;
+}
+
+.movie-card-button {
+  background: none;
+  color: white;
 }
 
 .movie-card-1 {
@@ -10,7 +33,7 @@ $star-wars-yellow: #FFE81F;
  background-repeat: no-repeat;
  background-size: auto;
  background-position: center;
- border: red solid 5px;
+ border: red solid 3px;
 }
 
 .movie-card-2 {
@@ -18,7 +41,7 @@ $star-wars-yellow: #FFE81F;
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-  border: green solid 5px;
+  border: green solid 3px;
 }
 
 .movie-card-3 {
@@ -26,7 +49,7 @@ $star-wars-yellow: #FFE81F;
   background-position: left;
   background-repeat: no-repeat;
   background-size: auto;
-  border: orange solid 5px;
+  border: orange solid 3px;
 }
 
 .movie-card-4 {
@@ -34,7 +57,7 @@ $star-wars-yellow: #FFE81F;
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
-  border: white solid 5px;
+  border: white solid 3px;
 }
 
 .movie-card-5 {
@@ -42,13 +65,21 @@ $star-wars-yellow: #FFE81F;
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 100%;
-  border: blue solid 5px;
+  border: lightblue solid 3px;
 }
 
 .movie-card-6 {
-  background-color: red;
+  background-image: url('../../images/return-jedi.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: silver solid 3px;
 }
 
 .movie-card-7 {
-  background-color: yellow;
+  background-image: url('../../images/force-awakens.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: chocolate solid 3px;
 }

@@ -21,12 +21,14 @@ const MovieContainer = ({ movies, user, selectMovie }) => {
   return (
     <div className="movie-container">
       <header>
+        <div>
+          <UserInfo
+            name={user.name}
+            quote={user.quote}
+            ranking={user.ranking}
+          />
+        </div>
         <h1 className="movie-container-heading">Star Wars Episodes</h1>
-        <UserInfo
-          name={user.name}
-          quote={user.quote}
-          ranking={user.ranking}
-        />
       </header>
       <div className="movie-container-content">
         {movieInfo}
