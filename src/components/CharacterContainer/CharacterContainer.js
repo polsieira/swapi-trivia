@@ -25,11 +25,13 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
           quote={user.quote}
           ranking={user.ranking}
         />
+      </header>
+      <div className='crawl'>
         <CrawlContainer
           title={episode}
           subTitle={title}
           text={scrollingText} />
-      </header>
+      </div>
 
       {characterInfo}
     </div>
