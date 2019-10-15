@@ -7,11 +7,11 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
   })
   return (
     <div className="character-card">
-      <p className="character-card-detail">Name: {name}</p>
-      <p className="character-card-detail">Homeworld: {homeworld}</p>
-      <p className="character-card-detail">Population: {population}</p>
-      <p className="character-card-detail">Species: {!species ? 'Species Unknown' : species}</p>
-      <p className="character-card-detail">Related Films: {filmsList}</p>
+      <h2 className="character-card-name">{name}</h2>
+      <p>Homeworld: {homeworld}</p>
+      <p>Population: {population}</p>
+      <p>Species: {!species ? 'Species Unknown' : species}</p>
+      <p>Related Films: {filmsList}</p>
       <button>Make a Favorite</button>
     </div>
   )

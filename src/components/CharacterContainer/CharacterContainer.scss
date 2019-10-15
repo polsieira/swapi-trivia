@@ -1,11 +1,15 @@
-.crawl {
-
-}
+$star-wars-yellow: #FFE81F;
 
 .character-container {
 	background-image: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
 	background-repeat: repeat;
 	font-family: 'Oswald', sans-serif;
+}
+
+.character-container-heading {
+	color: $star-wars-yellow;
+  font-size: 85px;
+	padding: 50px 50px 0px 50px;
 }
 
 .loadingPage {
@@ -17,6 +21,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 9%;
+	margin: 3% 9%;
 	width: 75%;
 }

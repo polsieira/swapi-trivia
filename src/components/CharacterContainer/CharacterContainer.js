@@ -31,12 +31,12 @@ const CharacterContainer = ({ characters, user, scrollingText, episode, title })
   return (
     <div className="character-container">
       <header>
-        <h1>Star Wars Characters</h1>
         <UserInfo
           name={user.name}
           quote={user.quote}
           ranking={user.ranking}
         />
+        <h1 className="character-container-heading">Star Wars Characters</h1>
       </header>
       <div className="character-card-container">
         {characterInfo}
