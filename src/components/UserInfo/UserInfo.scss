@@ -1,0 +1,20 @@
+$star-wars-yellow: #FFE81F;
+
+.user-info {
+  color: $star-wars-yellow;
+  padding: 2% 1% 0 85%;
+}
+
+.user-info-p {
+  margin: 3px 0;
+}
+
+.button--sign-out {
+  border: $star-wars-yellow 1px solid;
+  font-size: 15px;
+  font-weight: bold;
+  height: 25px;
+  background: none;
+
+  color: $star-wars-yellow;
+}

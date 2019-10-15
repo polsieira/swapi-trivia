@@ -1,0 +1,17 @@
+$star-wars-yellow: #FFE81F;
+
+.movie-container {
+  background-image: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
+  font-family: 'Oswald', sans-serif;
+}
+
+.movie-container-heading {
+  color: $star-wars-yellow;
+  font-size: 85px;
+  padding: 0 50px 50px 50px;
+}
+
+.movie-container-content {
+  display: flex;
+  justify-content: space-around;
+}

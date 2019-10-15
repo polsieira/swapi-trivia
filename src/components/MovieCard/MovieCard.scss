@@ -1,0 +1,85 @@
+$star-wars-yellow: #FFE81F;
+
+.movie-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 550px;
+  margin-bottom: 30px;
+  width: 170px;
+}
+
+.movie-card-p {
+  margin: 0;
+}
+
+.movie-card-info {
+  background-color: black;
+  color: $star-wars-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 25%;
+  opacity: .8;
+}
+
+.movie-card-button {
+  background: none;
+  color: white;
+}
+
+.movie-card-1 {
+ background-image: url('../../images/phantom-menace.jpg');
+ background-repeat: no-repeat;
+ background-size: auto;
+ background-position: center;
+ border: red solid 3px;
+}
+
+.movie-card-2 {
+  background-image: url('../../images/clones.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  border: green solid 3px;
+}
+
+.movie-card-3 {
+  background-image: url('../../images/revenge-of-the-sith.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: orange solid 3px;
+}
+
+.movie-card-4 {
+  background-image: url('../../images/new-hope.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: white solid 3px;
+}
+
+.movie-card-5 {
+  background-image: url('../../images/empire-strikes-back.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: lightblue solid 3px;
+}
+
+.movie-card-6 {
+  background-image: url('../../images/return-jedi.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: silver solid 3px;
+}
+
+.movie-card-7 {
+  background-image: url('../../images/force-awakens.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: chocolate solid 3px;
+}

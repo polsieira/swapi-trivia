@@ -1,8 +1,10 @@
+$star-wars-yellow: #FFE81F;
+
 * {
     margin: 0;
   }
   
-  .home {
+.home {
   background-image: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
@@ -12,7 +14,7 @@
 }
 
 .h1-welcome-banner {
-  color: yellow;
+  color: $star-wars-yellow;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -21,8 +23,6 @@
 
 form {
   align-items: center;
-  // background-color: black;
-  // border: double 10px silver;
   border-radius: 10px;
   color: silver;
   display: flex;
@@ -30,43 +30,60 @@ form {
   height: 450px;
   margin: auto;
   max-width: 50%;
-  // opacity: .8;
 }
 
 input, select, textarea {
-  border: solid 3px silver;
+  border: 1px silver double;
   border-radius: 5px;
   font-family: 'Oswald', sans-serif;
-  font-size: 15px;
-  height: 40px;
+  font-size: 20px;
+  height: 50px;
   margin: 15px 0;
+  padding-left: 10px;
   width: 70%;
 }
 
 label {
-  font-size: 20px;
+  color: $star-wars-yellow;
+  font-size: 25px;
+  margin-top: 40px;
 }
 
 input {
-  margin-top: 30px ;
+  background: none;
+  color: $star-wars-yellow;
+  margin-top: 30px;
+}
+
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: $star-wars-yellow;
 }
 
 .button--sign-in {
-  border: solid 3px silver;
-  border-radius: 5px;
-  font-size: 15px;
+  background-color: $star-wars-yellow;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
   height: 50px;
   margin: 55px 0 35px 0;
   width: 40%;
  }
 
  textarea {
-   font-size: 15px;
-   padding: 15px 0;
-   height: 45px;
+  background: none;
+  color: $star-wars-yellow;
+  margin-top: 30px;
+  padding: 15px 0 0 10px;
+  height: 55px;
+ }
+
+ select {
+  background: none;
+  color: $star-wars-yellow;
+  width: 73%;
  }
 
  p {
-   max-width: 70%;
-   margin: 35px 0;
+  max-width: 70%;
+  margin: 35px 0;
  }

@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import UserInfo from '../UserInfo/UserInfo';
+import './MovieContainer.scss';
 
 const MovieContainer = ({ movies, user, selectMovie }) => {
   const movieInfo = movies.map(movie => {
@@ -17,17 +18,22 @@ const MovieContainer = ({ movies, user, selectMovie }) => {
   })
 
   return (
-    <>
+    <div className="movie-container">
       <header>
-        <h1>Star Wars Episodes</h1>
-        <UserInfo
-          name={user.name}
-          quote={user.quote}
-          ranking={user.ranking}
-        />
+        <div>
+          <UserInfo
+            name={user.name}
+            quote={user.quote}
+            ranking={user.ranking}
+          />
+        </div>
+        <h1 className="movie-container-heading">Star Wars Episodes</h1>
       </header>
-      {movieInfo}
-    </>
+      <div className="movie-container-content">
+        {movieInfo}
+      </div>
+    </div>
+
   )
 
 }
