@@ -9,7 +9,7 @@ This application allows the user to nerd out on all their favorite Star Wars Epi
 
 ## Download the App
 
-## Clone & Install
+### Clone & Install
 
 Clone down this repo in your terminal by running `git clone` followed by the link provided in the upper right hand corner of your screen.
 
