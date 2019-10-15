@@ -38,7 +38,11 @@ $star-wars-yellow: #FFE81F;
 }
 
 .movie-card-5 {
-  background-color: green;
+  background-image: url('../../images/empire-strikes-back.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: blue solid 5px;
 }
 
 .movie-card-6 {
