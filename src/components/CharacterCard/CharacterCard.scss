@@ -1,0 +1,16 @@
+$star-wars-yellow: #FFE81F;
+
+.character-card {
+  border: 1px solid $star-wars-yellow;
+  width: 200px;
+}
+
+.character-card-detail {
+  margin: 2px 0;
+}
+
+.character-card button {
+  background: none;
+  border: $star-wars-yellow 1px solid;
+  color: $star-wars-yellow;
+}

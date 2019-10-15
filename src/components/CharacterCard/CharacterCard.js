@@ -1,4 +1,5 @@
 import React from 'react';
+import './CharacterCard.scss'
 
 const CharacterCard = ({ name, homeworld, population, species, films }) => {
   const filmsList = films.map((film, index) => {
@@ -6,11 +7,11 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
   })
   return (
     <div className="character-card">
-      <p>Name: {name}</p>
-      <p>Homeworld: {homeworld}</p>
-      <p>Population: {population}</p>
-      <p>Species: {!species ? 'Species Unknown' : species}</p>
-      <p>Related Films: {filmsList}</p>
+      <p className="character-card-detail">Name: {name}</p>
+      <p className="character-card-detail">Homeworld: {homeworld}</p>
+      <p className="character-card-detail">Population: {population}</p>
+      <p className="character-card-detail">Species: {!species ? 'Species Unknown' : species}</p>
+      <p className="character-card-detail">Related Films: {filmsList}</p>
       <button>Make a Favorite</button>
     </div>
   )
