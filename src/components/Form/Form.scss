@@ -32,6 +32,13 @@ form {
   max-width: 50%;
 }
 
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 73%;
+}
+
 input, select, textarea {
   border: 1px silver double;
   border-radius: 5px;
@@ -80,7 +87,7 @@ input::placeholder, textarea::placeholder, select::placeholder {
   background: none;
   color: $star-wars-yellow;
   margin: 0;
-  width: 73%;
+  width: 100%;
  }
 
  p {

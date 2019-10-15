@@ -59,13 +59,14 @@ class Form extends Component {
 
           <textarea type="text" placeholder="Enter Favorite Quote" name="quote" value={this.state.quote} onChange={event => this.handleChange(event)}></textarea>
           {this.state.errors && <span className='errorMessage'>{this.state.errors.quote}</span>}
-
-          <label>Select Jedi Level</label>
-          <select name="ranking" value={this.state.ranking} onChange={event => this.handleChange(event)}>
-            <option value="padawan">Padawan</option>
-            <option value="jedi knight">Jedi Knight</option>
-            <option value="jedi master">Jedi Master</option>
-          </select>
+          <div>
+            <label>Select Jedi Level</label>
+            <select name="ranking" value={this.state.ranking} onChange={event => this.handleChange(event)}>
+              <option value="padawan">Padawan</option>
+              <option value="jedi knight">Jedi Knight</option>
+              <option value="jedi master">Jedi Master</option>
+            </select>
+          </div>
           <button type="submit" className="button--sign-in" onClick={this.signIn}>May The Force Be with You</button>
         </form>
       </div>
