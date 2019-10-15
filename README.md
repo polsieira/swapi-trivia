@@ -1,6 +1,6 @@
 # SWAPI Trivia
 
-A Star Wars application made my Pol Sieira and Jeannie Evans using React, SASS, and a Star Wars API for info. All files are accompanied by testing.
+A Star Wars application made by Pol Sieira and Jeannie Evans using React, SASS, and a Star Wars API for the info. All files are accompanied by testing.
 
 ## About
 
